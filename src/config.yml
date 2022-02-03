@@ -1,0 +1,255 @@
+# ---IMPORTANT---
+# Formatting: "%player%" will use the player's name. "%advancement%" will get the advancement's name from the list below. %cause% will get the cause of death.
+# You are allowed to change what the advancements are called (e.g change "Minecraft" to "Taco Tuesday").
+# DO NOT CHANGE THE PART BEFORE THE COLON ":" !!!!
+
+# Setting this to true will use the "universal-adv-msg" no matter what advancement is made.
+# The message is editable.
+# Setting this to false will use only what the advancement is set to.
+# For example: if this is set to false and the player mines diamonds for the first time, the message displayed will be whatever is
+# in the "story-mine_diamond" field. Set to false if you plan on setting a custom message for each advancement, otherwise set to true
+# and use 1 message for all.
+# NOTE: if set to false, don't use "%advancement%" in the advancement's message.
+# "adv-prefix" will be added to the beginning of each advancement message (if set to false).
+use-universal-adv-msg: true
+adv-prefix: ""
+universal-adv-msg: "&8[&7%player% just completed &a%advancement%&7!&8]"
+
+# Main story achievements
+# Minecraft
+story-root: "Minecraft"
+# Stone Age
+story-mine_stone: "Stone Age"
+# Getting an Upgrade
+story-upgrade_tools: "Getting an Upgrade"
+# Acquire Hardware
+story-smelt_iron: "Acquire Hardware"
+# Suit Up
+story-obtain_armor: "Suit Up"
+# Hot Stuff
+story-lava_bucket: "Hot Stuff"
+# Isn't It Iron Pick
+story-iron_tools: "Isn''t It Iron Pick"
+# Not Today, Thank you
+story-deflect_arrow: "Not Today, Thank You"
+# Ice Bucket Challenge
+story-form_obsidian: "Ice Bucket Challenge"
+# Diamonds!
+story-mine_diamond: "Diamonds!"
+# We Need To Go Deeper
+story-enter_the_nether: "We Need To Go Deeper"
+# Cover Me With Diamonds
+story-shiny_gear: "Cover Me With Diamonds"
+# Enchanter
+story-enchant_item: "Enchanter"
+# Zombie Doctor
+story-cure_zombie_villager: "Zombie Doctor"
+# Eye Spy
+story-follow_ender_eye: "Eye Spy"
+# The End?
+story-enter_the_end: "The End?"
+
+# Nether achievements
+# Nether
+nether-root: "Nether"
+# Return to Sender
+nether-return_to_sender: "Return to Sender"
+# Those Were the Days
+nether-find_bastion: "Those Were the Days"
+# Hidden in the Depths
+nether-obtain_ancient_debris: "Hidden in the Depths"
+# Subspace Bubble
+nether-fast_travel: "Subspace Bubble"
+# A Terrible Fortress
+nether-find_fortress: "A Terrible Fortress"
+# Who is Cutting Onions?
+nether-obtain_crying_obsidian: "Who is Cutting Onions?"
+# Oh Shiny
+nether-distract_piglin: "Oh Shiny"
+# This Boat Has Legs
+nether-ride_strider: "This Boat Has Legs"
+# Uneasy Alliance
+nether-uneasy_alliance: "Uneasy Alliance"
+# War Pigs
+nether-loot_bastion: "War Pigs"
+# Country Lode, Take Me Home
+nether-use_lodestone: "Country Lode, Take Me Home"
+# Cover Me in Debris
+nether-netherite_armor: "Cover Me In Debris"
+# Spooky Scary Skeleton
+nether-get_wither_skull: "Spooky Scary Skeleton"
+# Into Fire
+nether-obtain_blaze_rod: "Into Fire"
+# Not Quite "Nine" Lives
+nether-charge_respawn_anchor: "Not Quite \"Nine\" Lives"
+# Feels Like Home
+nether-ride_strider_in_overworld_lava: "Feels Like Home"
+# Hot Tourist Destinations
+nether-explore_nether: "Hot Tourist Destinations"
+# Withering Heights
+nether-summon_wither: "Withering Heights"
+# Local Brewery
+nether-brew_potion: "Local Brewery"
+# Bring Home the Beacon
+nether-create_beacon: "Bring Home the Beacon"
+# A Furious Cocktail
+nether-all_potions: "A Furious Cocktail"
+# Beaconator
+nether-create_full_beacon: "Beaconator"
+# How Did We Get Here?
+nether-all_effects: "How Did We Get Here?"
+
+# End  achievements
+# The End?
+end-root: "The End?"
+# Free the End
+end-kill_dragon: "Free the End"
+# The Next Generation
+end-dragon_egg: "The Next Generation"
+# Remote Gateway
+end-enter_end_gateway: "Remote Gateway"
+# The End... Again...
+end-respawn_dragon: "The End... Again..."
+# You Need a Mint
+end-dragon_breath: "You Need a Mint"
+# The City at the End of the Game
+end-find_end_city: "The City at the End of the Game"
+# The Sky's the Limit
+end-elytra: "The Sky's the Limit"
+# Great View From up Here
+end-levitate: "Great View From Up Here"
+
+# Adventure achievements
+# Advencture
+adventure-root: "Adventure"
+# Voluntary Exile
+adventure-voluntary_exile: "Voluntary Exile"
+# Is Is a Bird?
+adventure-spyglass_at_parrot: "Is It a Bird?"
+# Monster Hunter
+adventure-kill_a_mob: "Monster Hunter"
+# What a Deal!
+adventure-trade: "What a Deal!"
+# Sticky Situation
+adventure-honey_block_slide: "Sticky Situation"
+# Ol' Besty
+adventure-ol_besty: "Ol' Betsy"
+# Surge Protector
+adventure-lightning_rod_with_villager_no_fire: "Surge Protector"
+# Caves & Cliffs
+adventure-fall_from_world_height: "Caves & Cliffs"
+# Sweet Dreams
+adventure-sleep_in_bed: "Sweet Dreams"
+# Hero of the Village
+adventure-hero_of_the_village: "Hero of the Village"
+# Is It a Balloon?
+adventure-spyglass_at_ghost: "Is It a Balloon?"
+# A Throwaway Joke
+adventure-throw_trident: "A Throwaway Joke"
+# Take Aim
+adventure-shoot_arrow: "Take Aim"
+# Monsters Hunted
+adventure-kill_all_mobs: "Monsters Hunted"
+# Postmortal
+adventure-totem_of_undying: "Postmortal"
+#Hired Help
+adventure-summon_iron_golem: "Hired Help"
+# Star Trader
+adventure-trade_at_world_height: "Star Trader"
+# Two Birds, One Arrow
+adventure-two_birds_one_arrow: "Two Birds, One Arrow"
+# Who's the Pillager Now?
+adventure-whos_the_pillager_now: "Who's the Pillager Now?"
+# Arbalistic
+adventure-arbalistic: "Arbalistic"
+# Adventuring Time
+adventure-adventuring_time: "Adventuring Time"
+# Sound of Music
+adventure-play_jukebox_in_meadows: "Sound of Music"
+# Light as a Rabbit
+adventure-walk_on_powder_snow_with_leather_boots: "Light as a Rabbit"
+# Is It a Plane?
+adventure-spyglass_at_dragon: "Is It a Plane?"
+# Very Very Frightening
+adventure-very_very_frightening: "Very Very Frightening"
+# Sniper Duel
+adventure-sniper_duel: "Sniper Duel"
+# Bullseye
+adventure-bullseye: "Bullseye"
+
+# Husbandry achievements
+# Husbandry
+husbandry-root: "Husbandry"
+# Bee Our Guest
+husbandry-safely_harvest_honey: "Bee Our Guest"
+# The Parrots and the Bats
+husbandry-breed_an_animal: "The Parrots and the Bats"
+# Whatever Floats Your Goat!
+husbandry-ride_a_boat_with_a_goat: "Whatever Floats Your Goat!"
+# Best Friends Forever
+husbandry-tame_an_animal: "Best Friends Forever"
+# Glow and Behold!
+husbandry-make_a_sign_glow: "Glow and Behold!"
+# Fishy Business
+husbandry-fishy_business: "Fishy Business"
+# Total Beelocation
+husbandry-silk_touch_nest: "Total Beelocation"
+# A Seedy Place
+husbandry-plant_seed: "A Seedy Place"
+# Wax On
+husbandry-wax_on: "Wax On"
+# Two by Two
+husbandry-bred_all_animals: "Two by Two"
+# A Complete Catalogue
+husbandry-complete_catalogue: "A Complete Catalogue"
+# Tactical Fishing
+husbandry-tactical_fishing: "Tactical Fishing"
+# A Balanced Diet
+husbandry-balanced_diet: "A Balanced Diet"
+# Serious Dedication
+husbandry-obtain_netherite_hoe: "Serious Dedication"
+# Wax Off
+husbandry-wax_off: "Wax Off"
+# The Cutest Predator
+husbandry-axolotol_in_a_bucket: "The Cutest Predator"
+# The Healing Power of Friendship!
+husbandry-kill_axolotl_target: "The Healing Power of Friendship!"
+
+# Similarly to "use-universal-adv-msg", this will use "universal-death-msg" message for all deaths if set to true.
+# If set to false, the message displayed will just be the value at the type of death in the list below.
+# Use %cause% to get the cause of death which DOES take the value from the cause in the list below.
+# DO NOT USE %cause% if set to false.
+# "death-prefix" will be added to the beginning of each death message (if set to false).
+use-universal-death-msg: false
+death-prefix: "&7"
+universal-death-msg: "&8%player% &7was killed because of %cause%"
+
+BLOCK_EXPLOSION: "%player% tried to cook TNT"
+CONTACT: "%player% walked into a cactus lmao"
+CRAMMING: "%player% couldn't handle social interactions"
+CUSTOM: "idk what this is tbh"
+DRAGON_BREATH: "%player% smelled the dragon's bad breath"
+DROWNING: "%player% can't swim"
+DRYOUT: "this is for fish so i dont think it needs to be here but keep just in case"
+ENTITY_ATTACK: "%player% doesn't know how to fight"
+ENTITY_EXPLOSION: "%player% got blown up by something that wasn't TNT"
+ENTITY_SWEEP_ATTACK: "%player% got swept into trouble"
+FALL: "%player% doesn't know how to fly"
+FALLING_BLOCK: "%player% forgot to read the weather forecast... It was raining blocks"
+FIRE: "Mmmm, cooked %player%. My favorite"
+FIRE_TICK: "%player% suffered 3rd degree burns"
+FLY_INTO_WALL: "Don't let %player% fly a plane..."
+FREEZE: "%player% tried to be the next Captain America"
+HOT_FLOOR: "%player% doesn't know how to crouch on magma blocks"
+LAVA: "%player% swam in a hot tub too hot for them"
+LIGHTNING: "%player% has angered God and paid the price"
+MAGIC: "%player% got into a fight with a wizard"
+MELTING: "lol if a snowman melts"
+POISON: "%player% ate Taco Bell wings"
+PROJECTILE: "%player% visited Detroit"
+STARVATION: "%player% visited Africa"
+SUFFOCATION: "%player% got a mouthful of blocks"
+SUICIDE: "%player% got bullied on the internet and couldn't handle it"
+THORNS: "Why are you hitting yourself %player%?"
+VOID: "%player% managed to escape the world"
+WITHER: "%player% died to the wither lol"
