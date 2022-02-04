@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameRule;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -14,20 +15,21 @@ import me.anxietie.customMsgs.Main;
 
 public class CustomMessage implements TabExecutor {
 	
-	private final String configUsage = "/cmsg <reload|get|set> <|(PATH)|(PATH)> <||(VALUE)>";
-	
 	private final Main main;
 	
 	public CustomMessage(Main main) {
 		this.main = main;
 	}
 	
+	
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		final String usage = main.getConfig().getString("usage");
 		if (sender instanceof Player) {
 			// Syntax checking
 			if (args.length < 1) {
-				sender.sendMessage(ChatColor.RED+"Incorrect syntax! Usage: "+ChatColor.GRAY+configUsage);
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
 				return false;
 			}
 			// Command checking
@@ -49,7 +51,7 @@ public class CustomMessage implements TabExecutor {
 					}
 					// Syntax checking
 					if (args.length != 2) {
-						sender.sendMessage(ChatColor.RED+"Incorrect syntax! Usage: "+ChatColor.GRAY+configUsage);
+						sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
 						return false;
 					}
 					try {
@@ -67,7 +69,7 @@ public class CustomMessage implements TabExecutor {
 					}
 					// Syntax checking
 					if (args.length < 3) {
-						sender.sendMessage(ChatColor.RED+"Incorrect syntax! Usage: "+ChatColor.GRAY+configUsage);
+						sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
 						return false;
 					}
 					try {
@@ -83,9 +85,91 @@ public class CustomMessage implements TabExecutor {
 						sender.sendMessage(ChatColor.RED+args[1]+" doesn't exist!");
 					}
 					break;
+				case "enable":
+					// Permission checking
+					if (!sender.hasPermission("cmsg.enable")) {
+						sender.sendMessage(ChatColor.RED+"Insufficient permissions!");
+						return true;
+					}
+					// Syntax checking
+					if (args.length != 2) {
+						sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
+						return false;
+					}
+					try {
+						if (args[1].equalsIgnoreCase("amsg")) {
+							if (main.getConfig().getBoolean("amsg-enabled"))
+								sender.sendMessage(ChatColor.RED+"Advancement messages are already enabled!");
+							else {
+								main.getConfig().set("amsg-enabled", true);
+								main.saveConfig();
+								((Player)sender).getWorld().setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false);
+								sender.sendMessage(ChatColor.GREEN+"Advancement messages successfully enabled!");
+							}
+						}
+						else if (args[1].equalsIgnoreCase("dmsg")) {
+							if (main.getConfig().getBoolean("dmsg-enabled"))
+								sender.sendMessage(ChatColor.RED+"Death messages are already enabled!");
+							else {
+								main.getConfig().set("dmsg-enabled", true);
+								main.saveConfig();
+								sender.sendMessage(ChatColor.GREEN+"Death messages successfully enabled!");
+								
+							}
+						}
+						else {
+							sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
+							return false;
+						}
+					}
+					catch (Exception e) {
+						sender.sendMessage(ChatColor.RED+"Error enabling.");
+					}
+					break;
+				case "disable":
+					// Permission checking
+					if (!sender.hasPermission("cmsg.disable")) {
+						sender.sendMessage(ChatColor.RED+"Insufficient permissions!");
+						return true;
+					}
+					// Syntax checking
+					if (args.length != 2) {
+						sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
+						return false;
+					}
+					try {
+						if (args[1].equalsIgnoreCase("amsg")) {
+							if (!main.getConfig().getBoolean("amsg-enabled"))
+								sender.sendMessage(ChatColor.RED+"Advancement messages are already disabled!");
+							else {
+								main.getConfig().set("amsg-enabled", false);
+								main.saveConfig();
+								((Player)sender).getWorld().setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, true);
+								sender.sendMessage(ChatColor.GREEN+"Advancement messages successfully disabled!");
+							}
+						}
+						else if (args[1].equalsIgnoreCase("dmsg")) {
+							if (!main.getConfig().getBoolean("dmsg-enabled"))
+								sender.sendMessage(ChatColor.RED+"Death messages are already disabled!");
+							else {
+								main.getConfig().set("dmsg-enabled", false);
+								main.saveConfig();
+								sender.sendMessage(ChatColor.GREEN+"Death messages successfully disabled!");
+								
+							}
+						}
+						else {
+							sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
+							return false;
+						}
+					}
+					catch (Exception e) {
+						sender.sendMessage(ChatColor.RED+"Error disabling.");
+					}
+					break;
 				// If they do some other random command
 				default:
-					sender.sendMessage(ChatColor.RED+"Incorrect syntax! Usage: "+ChatColor.GRAY+configUsage);
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', usage));
 					return false;
 			}
 		}
@@ -102,6 +186,8 @@ public class CustomMessage implements TabExecutor {
 			arg1.add("reload");
 			arg1.add("set");
 			arg1.add("get");
+			arg1.add("enable");
+			arg1.add("disable");
 			return arg1;
 		}
 		else if (args.length == 2 && (args[0].equalsIgnoreCase("get") || args[0].equalsIgnoreCase("set"))) {
@@ -111,8 +197,13 @@ public class CustomMessage implements TabExecutor {
 				arg2.add(key);
 			return arg2;
 		}
+		else if (args.length == 2 && (args[0].equalsIgnoreCase("enable") || args[0].equalsIgnoreCase("disable"))) {
+			List<String> arg2 = new ArrayList<>();
+			arg2.add("amsg");
+			arg2.add("dmsg");
+			return arg2;
+		}
 		else
 			return new ArrayList<String>();
 	}
-	
 }
