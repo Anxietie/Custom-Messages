@@ -3,16 +3,21 @@
 # You are allowed to change what the advancements are called (e.g change "Minecraft" to "Taco Tuesday").
 # DO NOT CHANGE THE PART BEFORE THE COLON ":" !!!!
 
-# Setting this to true will use the "universal-adv-msg" no matter what advancement is made.
+# This is the usage message that is displayed when the command is written incorrectly.
+usage: "&cIncorrect syntax! Usage: &7/cmsg <reload|get|set> <|(PATH)|(PATH)> <||(VALUE)>"
+
+# "adv-enabled" determines whether to use the plugin's advancement messaging system or Minecraft's.
+# Setting "use-universal-adv-msg" to true will use the "universal-adv-msg" no matter what advancement is made.
 # The message is editable.
-# Setting this to false will use only what the advancement is set to.
+# Setting it to false will use only what the advancement is set to.
 # For example: if this is set to false and the player mines diamonds for the first time, the message displayed will be whatever is
 # in the "story-mine_diamond" field. Set to false if you plan on setting a custom message for each advancement, otherwise set to true
 # and use 1 message for all.
 # NOTE: if set to false, don't use "%advancement%" in the advancement's message.
-# "adv-prefix" will be added to the beginning of each advancement message (if set to false).
+# "adv-prefix" will be added to the beginning of each advancement message (if use is set to false).
+amsg-enabled: true
 use-universal-adv-msg: true
-adv-prefix: ""
+adv-prefix: "&7"
 universal-adv-msg: "&8[&7%player% just completed &a%advancement%&7!&8]"
 
 # Main story achievements
@@ -215,11 +220,13 @@ husbandry-axolotol_in_a_bucket: "The Cutest Predator"
 # The Healing Power of Friendship!
 husbandry-kill_axolotl_target: "The Healing Power of Friendship!"
 
-# Similarly to "use-universal-adv-msg", this will use "universal-death-msg" message for all deaths if set to true.
+# "dmsg-enabled" determines whether to use the plugin's death messaging system or Minecraft's.
+# Similarly to "use-universal-adv-msg", this will use "universal-death-msg" message for all deaths if "use-universal-death-msg" is set to true.
 # If set to false, the message displayed will just be the value at the type of death in the list below.
 # Use %cause% to get the cause of death which DOES take the value from the cause in the list below.
 # DO NOT USE %cause% if set to false.
-# "death-prefix" will be added to the beginning of each death message (if set to false).
+# "death-prefix" will be added to the beginning of each death message (if use is set to false).
+dmsg-enabled: true
 use-universal-death-msg: false
 death-prefix: "&7"
 universal-death-msg: "&8%player% &7was killed because of %cause%"
