@@ -21,6 +21,10 @@ public class OnAdvancement implements Listener{
 	// When player completes an advancement, this is called
 	@EventHandler
 	public void OnPlayerAdvancement(PlayerAdvancementDoneEvent event) throws EventException {
+		// If they have them disabled
+		if (!main.getConfig().getBoolean("amsg-enabled"))
+			return;
+		
 		if (event == null)
 			return;
 		// Name of the advancement (example: "story/root" or "story/mine_diamond")
@@ -35,7 +39,7 @@ public class OnAdvancement implements Listener{
 			// In a try-catch because of weird errors thrown
 			try {
 				// Builds the message and broadcasts it
-				message += main.getConfig().getString("universal-adv-msg");
+				message = main.getConfig().getString("universal-adv-msg");
 				if (message.contains("%player%"))
 					message = message.replaceAll("%player%", event.getPlayer().getName());
 				if (message.contains("%advancement%"))
@@ -50,7 +54,7 @@ public class OnAdvancement implements Listener{
 		// If they don't want to use the universal message
 		else {
 			try {
-				message = main.getConfig().getString(adv);
+				message += main.getConfig().getString(adv);
 				Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', message));
 			}
 			catch (Exception e) {
