@@ -1,7 +1,7 @@
 name: CustomMessages
 description: Plugin that allows you to change advancement and death messages
 main: me.anxietie.customMsgs.Main
-version: 1.1
+version: 1.2
 api-version: 1.18
 author: Anxietie
 website: "https://github.com/Anxietie/Custom-Messages.git"
@@ -17,12 +17,20 @@ permissions:
          cmsg.reload: true
          cmsg.set: true
          cmsg.get: true
+         cmsg.enable: true
+         cmsg.disable: true
+   cmsg.reload:
+      description: Gives permission to reload the config.yml file
+      default: false
    cmsg.set:
       description: Gives permission to set values in the config
       default: false
    cmsg.get:
       description: Gives permission to view a value at a path in the config
       default: false
-   cmsg.reload:
-      description: Gives permission to reload the config.yml file
+   cmsg.enable:
+      description: Gives permission to enable death messages or advancement messages
+      default: false
+   cmsg.disable:
+      description: Gives permission to disable death messages or advancement messages
       default: false
