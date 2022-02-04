@@ -10,7 +10,13 @@ Disable  the "announceAdvancement" gamerule in game for the advancement messages
 
 
 -COMMANDS-
-- /cmsg is the base command.
-- use /cmsg to reload the config.
-- use /cmsg get <path> to get a path's value from the config.
-- use /cmsg set <path> <value> to set a path's value in the config.
+  /cmsg is the base command.
+  use /cmsg to reload the config.
+  use /cmsg get <path> to get a path's value from the config.
+  use /cmsg set <path> <value> to set a path's value in the config.
+  
+-PERMISSIONS-
+  cmsg.*
+    cmsg.reload
+    cmsg.set
+    cmsg.get
