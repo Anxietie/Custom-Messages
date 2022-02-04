@@ -17,6 +17,6 @@ Disable  the "announceAdvancement" gamerule in game for the advancement messages
   
 -PERMISSIONS-
 - cmsg.*
-- - cmsg.reload
-- - cmsg.set
-- - cmsg.get
+  - cmsg.reload
+  - cmsg.set
+  - cmsg.get
