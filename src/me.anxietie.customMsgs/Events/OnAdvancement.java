@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import me.anxietie.customMsgs.Main;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 
 public class OnAdvancement implements Listener{
 	
@@ -44,10 +45,10 @@ public class OnAdvancement implements Listener{
 					message = message.replaceAll("%player%", event.getPlayer().getName());
 				if (message.contains("%advancement%"))
 					message = message.replaceAll("%advancement%", main.getConfig().getString(adv));
+				event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.5f, 1);
 				Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', message));
 			}
 			catch (Exception e) {
-				e.printStackTrace();
 				main.getLogger().info("Error getting advancement for "+event.getPlayer().getName());
 			}
 		}
@@ -55,10 +56,10 @@ public class OnAdvancement implements Listener{
 		else {
 			try {
 				message += main.getConfig().getString(adv);
+				event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.5f, 1);
 				Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', message));
 			}
 			catch (Exception e) {
-				e.printStackTrace();
 				main.getLogger().info("Error getting advancement for "+event.getPlayer().getName());
 			}
 		}
