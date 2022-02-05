@@ -40,7 +40,6 @@ public class OnDeath implements Listener{
 				event.setDeathMessage(ChatColor.translateAlternateColorCodes('&', message));
 			}
 			catch (Exception e) {
-				e.printStackTrace();
 				main.getLogger().info("Error setting death message for "+event.getEntity().getName());
 			}
 		}
@@ -53,7 +52,6 @@ public class OnDeath implements Listener{
 				event.setDeathMessage(ChatColor.translateAlternateColorCodes('&', message));
 			}
 			catch (Exception e) {
-				e.printStackTrace();
 				main.getLogger().info("Error setting death message for "+event.getEntity().getName());
 			}
 		}
